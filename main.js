@@ -22,3 +22,24 @@ function sendEmail() {
     window.open(mailtoLink, '_blank');
     
 }
+
+document.getElementById('downloadButton').addEventListener('click', function() {
+    // URL of the PDF file you want to download
+    const pdfUrl = './virendra_Resume.pdf';
+
+    // Create an invisible anchor element
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+
+    // Set the download attribute with a filename
+    link.download = 'Virendra_Resume.pdf';
+
+    // Append the anchor element to the body
+    document.body.appendChild(link);
+
+    // Programmatically click the anchor element to trigger the download
+    link.click();
+
+    // Remove the anchor element from the document
+    document.body.removeChild(link);
+});
